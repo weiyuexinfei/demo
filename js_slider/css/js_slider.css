@@ -1,0 +1,85 @@
+.slider_wrapper{
+	width: 600px;
+	height: 400px;
+	position: relative;
+	overflow : hidden;
+}
+.slider_wrapper a{
+	text-decoration: none;
+}
+.img_content {
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	position: relative;
+	width: 2400px;
+	height: 400px;
+	z-index: 10;
+	// overflow: hidden;
+}
+.img_content img{
+	float: left;
+	border: none;
+}
+.infoList {
+	box-sizing:border-box;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 20;
+	height: 50px;
+	line-height: 50px;
+	width: 600px;
+	background: rgba(0,0,0,0.4);
+	padding-left: 30px;
+	margin-bottom: 0;
+}
+.infoList li{
+	display: none;
+}
+.infoList .infoOn{
+	display: inline;
+	color: white;
+}
+ul.list-controls{
+	list-style: none;
+	//background-image : url(images/silde-nav.png);
+}
+.list-controls {
+	right: 30px;
+	bottom: 0px;
+	position: absolute;
+	z-index: 30;
+	margin-bottom: 10px;
+}
+.list-controls li{
+	display: inline-block;
+	padding: 4px 8px;
+	margin-right: 5px;
+	border: solid 2px black;
+	background: grey;
+	cursor: pointer;
+}
+li.indexOn {
+	background-color: red;
+	font-weight: bold;
+	color: white;
+}
+#prev,#next {
+	position: absolute;
+	top:180px;
+	z-index: 20;
+	cursor: pointer;
+	opacity: 0.5;
+	filter:alpha(opacity=50);
+}
+#prev{
+	left: 10px;
+}
+#next {
+	right: 10px;
+}
+#prev:hover,#next:hover{
+	opacity: 0.8;
+	filter:alpha(opacity=80);
+}

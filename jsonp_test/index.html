@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Jsonp跨域请求</title>
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+		// function myFn(data) {
+		// 	alert( data.result);
+		// }
+		$(document).ready(function () {
+        $.ajax({
+            type: "get",
+            async: false,
+            url: "http://localhost:8080/test/b.js",
+            dataType: "jsonp",
+            jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+            jsonpCallback: "aehyok", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+            success: function (json) {
+                alert("第二次"+json.result);
+            },
+            error: function () {
+                alert('fail');
+            }
+        });
+    });
+
+    function aehyok(data) {
+        alert("第一次"+data.result);
+    }
+
+	</script>
+	<!-- <script type="text/javascript" src="http://localhost:8080/test/b.js"></script> -->
+	<!-- <script type="text/javascript" src="http://localhost:8080/test/data.html"></script> -->
+	<!-- <script type="text/javascript" src="http://localhost:8080/test/data.aspx?callback=myFn"></script> -->
+</head>
+<body>
+
+</body>
+</html>

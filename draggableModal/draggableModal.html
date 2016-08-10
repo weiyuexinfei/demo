@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js可拖拽移动模态框</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="draggableModal.js"></script>
+	<script type="text/javascript">
+		function overlay() {
+			var modal = document.getElementById("Modal");
+			modal.style.display = (modal.style.display == "block") ? "none" : "block";
+		}
+	</script>
+</head>
+<body>
+	<button class="btn" onclick="overlay()">点击我</button>
+	<div class="modal-wrapper" id="Modal">
+	<div class="modal" id="myModal">
+		<div class="modal-head" id="modal_head">
+			点住该区域可拖动位置
+		</div>
+		<div class="modal-content">
+			内容区域
+		</div>
+		<button class="btn-close" onclick="overlay()">关闭</button>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function() {
+			var drag = new Drag({id:"myModal"});
+		}
+	</script>
+</body>
+</html>
