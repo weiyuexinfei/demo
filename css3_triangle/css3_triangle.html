@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>css3三角形的几个运用</title>
+	<style type="text/css">
+	html {
+		font-size: 10px;
+		text-align: center;
+	}
+	div {
+		margin: 10px auto;
+	}
+	.flag {
+		width: 0;
+    	height: 0;
+    	border: 2rem solid #33AAEE;
+    	border-top-width: 4rem;
+    	border-bottom-color: transparent;
+    	border-bottom-width: 2rem;
+	}
+	.db-arrow {
+		width: 0;
+		height: 0;
+		border-top: 1rem solid transparent;
+    	border-left: 2rem solid #33AAEE;
+    	border-bottom: 1rem solid transparent;
+    	border-right: 2rem solid transparent;
+		position: relative;
+	}
+	.db-arrow::after {
+		content: "";
+		width: 0;
+		height: 0;
+		border-top: 1rem solid transparent;
+    	border-left: 2rem solid #33AAEE;
+    	border-bottom: 1rem solid transparent;
+    	border-right: 2rem solid transparent;
+		position:absolute;
+		left: 0;
+		top: -1rem;
+
+	}
+	.bubble {
+		width: 10rem;
+		height: 3rem;
+		line-height: 3rem;
+		font-size: 2rem;
+		color: #fff;
+		text-align: center;
+		position: relative;
+		background-color: #33AAEE;
+	}
+	.bubble::before {
+		content: "";
+		width: 0;
+		height: 0;
+		position: absolute;
+		right: 10rem;
+		top: 0.65rem;
+		border: 0.8rem solid transparent;
+		border-right: 0.8rem solid #33AAEE;
+
+	}
+	.ribbon {
+		position:relative;
+		width: 10rem;
+		height: 3rem;
+		line-height: 3rem;
+		text-align: center;
+		background-color: #33AAEE;
+		/* color: #fff; */
+	}
+	.ribbon::before,.ribbon::after {
+		position: absolute;
+		content: "";
+		border: 1.5rem solid #33AAEE;
+		z-index: 2;
+	}
+	.ribbon::before {
+		border-left: 1.5rem solid transparent;
+		right: 10rem;
+		top: 0.6rem;
+		box-shadow: 1px 1px 0 rgba(51,170,238, 0.8);
+	}
+	.ribbon::after {
+		border-right: 1.5rem solid transparent;
+		left: 10rem;
+		top: 0.6rem;
+		box-shadow: -1px 1px 0 rgba(51,170,238, 0.8);
+	}
+	.ribbon .ribbon_content {
+		font-size: 2rem;
+		color: #fff;
+	}
+	.ribbon .ribbon_content::before,.ribbon .ribbon_content::after{
+		content: "";
+		position: absolute;
+		border-style: solid;
+		border-color: rgb(18,140,214) transparent transparent transparent;
+		bottom: -0.6rem;
+		z-index: 5;
+	}
+	.ribbon .ribbon_content::before {
+		left: -0.6rem;
+		border-width: 0.6rem 0 0 0.6rem;
+
+	}
+	.ribbon .ribbon_content::after {
+		right: -0.6rem;
+		border-width: 0.6rem 0.6rem 0 0;
+	}
+	</style>
+</head>
+<body>
+	<h1>旗帜</h1>
+	<div class="flag"></div>
+	<h1>向右双实心箭头</h1>
+	<div class="db-arrow"></div>
+	<h1>气泡</h1>
+	<div class="bubble">查看详情</div>
+	<h1>丝带</h1>
+	<div class="ribbon"><span class="ribbon_content">金牌会员</div>
+</body>
+</html>
