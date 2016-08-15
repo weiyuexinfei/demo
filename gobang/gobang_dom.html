@@ -181,13 +181,12 @@
             var xieShang = 0;//右上左下
             for(var i=0;x+i<16 && y-i>-1;i++){
                 // console.log("x="+x+"y="+y);
-                arrayXieShang.push(chessData[x+i][y-i]);
+                arrayXieShang.unshift(chessData[x+i][y-i]);
                 xieShang = i;
             }
 
             for(var i=1;y+i<16 && x-i>-1;i++){
-                console.log(3);
-                arrayXieShang.unshift(chessData[x-i][y+i]);
+                arrayXieShang.push(chessData[x-i][y+i]);
             }
             // for(var i=0;i<x&&y-x>-1;i++){
             // 	arrayXieShang.push(chessData[i][y-i]);
